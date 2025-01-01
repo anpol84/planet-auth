@@ -1,0 +1,69 @@
+openapi: 3.0.3
+info:
+  title: Planet Auth - OpenAPI 3.0
+  version: 1.0.0
+  description: |-
+    This service is auth service of hotel microservices
+tags:
+  - name: auth
+    description: Get jwt token
+
+paths:
+  /api/auth:
+    get:
+      tags:
+        - auth
+      summary: Get a jwt token
+      operationId: login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthRequest'
+      responses:
+        '200':
+          description: Jwt token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        '400':
+          description: Ошибка валидации запроса
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Поле 'login' или 'password' не передано"
+        '422':
+          description: Ошибка в бизнес логике
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthErrorResponse'
+
+components:
+  schemas:
+    AuthRequest:
+      type: object
+      properties:
+        login:
+          type: string
+        password:
+          type: string
+      required:
+        - login
+        - password
+    AuthResponse:
+      type: object
+      properties:
+        token:
+          type: string
+    AuthErrorResponse:
+      type: object
+      properties:
+        message:
+          type: string
