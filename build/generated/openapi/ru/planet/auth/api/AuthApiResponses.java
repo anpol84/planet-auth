@@ -8,11 +8,33 @@ package ru.planet.auth.api;
 import ru.planet.auth.model.AuthErrorResponse;
 import ru.planet.auth.model.AuthRequest;
 import ru.planet.auth.model.AuthResponse;
+import ru.planet.auth.model.CheckToken400Response;
 import ru.planet.auth.model.Login400Response;
+import ru.planet.auth.model.ValidateRequest;
+import ru.planet.auth.model.ValidateResponse;
 import jakarta.annotation.Nullable;
 
 @ru.tinkoff.kora.common.annotation.Generated("openapi generator kora client")
 public interface AuthApiResponses {
+
+  public sealed interface CheckTokenApiResponse {
+      /**
+      * Validate answer (status code 200)
+      */
+      @ru.tinkoff.kora.common.annotation.Generated("openapi generator kora client")
+      public record CheckToken200ApiResponse(
+        ValidateResponse content
+      ) implements CheckTokenApiResponse {}
+
+      /**
+      * Ошибка валидации запроса (status code 400)
+      */
+      @ru.tinkoff.kora.common.annotation.Generated("openapi generator kora client")
+      public record CheckToken400ApiResponse(
+        CheckToken400Response content
+      ) implements CheckTokenApiResponse {}
+
+  }
 
   public sealed interface LoginApiResponse {
       /**

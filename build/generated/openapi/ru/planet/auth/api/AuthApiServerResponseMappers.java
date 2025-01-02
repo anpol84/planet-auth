@@ -20,10 +20,51 @@ import ru.planet.auth.api.AuthApiResponses.*;
 import ru.planet.auth.model.AuthErrorResponse;
 import ru.planet.auth.model.AuthRequest;
 import ru.planet.auth.model.AuthResponse;
+import ru.planet.auth.model.CheckToken400Response;
 import ru.planet.auth.model.Login400Response;
+import ru.planet.auth.model.ValidateRequest;
+import ru.planet.auth.model.ValidateResponse;
 
 @ru.tinkoff.kora.common.annotation.Generated("openapi generator kora server")
 public interface AuthApiServerResponseMappers {
+  @ru.tinkoff.kora.common.annotation.Generated("openapi generator kora server")
+  final class CheckTokenApiResponseMapper implements HttpServerResponseMapper<CheckTokenApiResponse>{
+    private final HttpServerResponseMapper<HttpResponseEntity<ValidateResponse>> response200Delegate;
+    private final HttpServerResponseMapper<HttpResponseEntity<CheckToken400Response>> response400Delegate;
+
+
+    public CheckTokenApiResponseMapper(
+      @ru.tinkoff.kora.json.common.annotation.Json
+      HttpServerResponseMapper<ValidateResponse> response200Delegate,
+            @ru.tinkoff.kora.json.common.annotation.Json
+      HttpServerResponseMapper<CheckToken400Response> response400Delegate
+      ) {
+      this.response200Delegate = new HttpServerResponseEntityMapper<>(response200Delegate);
+      this.response400Delegate = new HttpServerResponseEntityMapper<>(response400Delegate);
+    }
+
+    @Override
+    public HttpServerResponse apply(Context ctx, HttpServerRequest request, CheckTokenApiResponse response) throws java.io.IOException { 
+      if (response instanceof CheckTokenApiResponse.CheckToken200ApiResponse rs) { 
+        var headers = HttpHeaders.of();
+        
+        
+        
+        var entity = HttpResponseEntity.of(200, headers, rs.content());
+        return this.response200Delegate.apply(ctx, request, entity);
+      }
+      if (response instanceof CheckTokenApiResponse.CheckToken400ApiResponse rs) { 
+        var headers = HttpHeaders.of();
+        
+        
+        
+        var entity = HttpResponseEntity.of(400, headers, rs.content());
+        return this.response400Delegate.apply(ctx, request, entity);
+      }
+      throw new IllegalStateException();
+    }
+  }
+
   @ru.tinkoff.kora.common.annotation.Generated("openapi generator kora server")
   final class LoginApiResponseMapper implements HttpServerResponseMapper<LoginApiResponse>{
     private final HttpServerResponseMapper<HttpResponseEntity<AuthResponse>> response200Delegate;

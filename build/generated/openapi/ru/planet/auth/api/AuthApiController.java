@@ -8,7 +8,10 @@ package ru.planet.auth.api;
 import ru.planet.auth.model.AuthErrorResponse;
 import ru.planet.auth.model.AuthRequest;
 import ru.planet.auth.model.AuthResponse;
+import ru.planet.auth.model.CheckToken400Response;
 import ru.planet.auth.model.Login400Response;
+import ru.planet.auth.model.ValidateRequest;
+import ru.planet.auth.model.ValidateResponse;
 
 import java.util.List;
 import java.util.Map;
@@ -26,14 +29,33 @@ public class AuthApiController {
     }
 
     /**
-     * GET /api/auth : Get a jwt token
+     * POST /api/validate : validate a jwt token
+     *
+     * @param validateRequest  (required)
+     * @return Validate answer (status code 200)
+     *         or Ошибка валидации запроса (status code 400)
+     */
+    @ru.tinkoff.kora.http.common.annotation.HttpRoute(method = "POST", path = "/api/validate")
+    @ru.tinkoff.kora.common.Mapping(AuthApiServerResponseMappers.CheckTokenApiResponseMapper.class)
+    public AuthApiResponses.CheckTokenApiResponse checkToken(      
+      @ru.tinkoff.kora.json.common.annotation.Json
+      ValidateRequest validateRequest
+    ) throws Exception {
+      return this.delegate.checkToken(
+        validateRequest
+      );
+    }
+
+
+    /**
+     * POST /api/auth : Get a jwt token
      *
      * @param authRequest  (required)
      * @return Jwt token (status code 200)
      *         or Ошибка валидации запроса (status code 400)
      *         or Ошибка в бизнес логике (status code 422)
      */
-    @ru.tinkoff.kora.http.common.annotation.HttpRoute(method = "GET", path = "/api/auth")
+    @ru.tinkoff.kora.http.common.annotation.HttpRoute(method = "POST", path = "/api/auth")
     @ru.tinkoff.kora.common.Mapping(AuthApiServerResponseMappers.LoginApiResponseMapper.class)
     public AuthApiResponses.LoginApiResponse login(      
       @ru.tinkoff.kora.json.common.annotation.Json

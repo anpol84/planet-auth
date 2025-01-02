@@ -6,4 +6,7 @@ ru/planet/auth/api/AuthApiServerResponseMappers.java
 ru/planet/auth/model/AuthErrorResponse.java
 ru/planet/auth/model/AuthRequest.java
 ru/planet/auth/model/AuthResponse.java
+ru/planet/auth/model/CheckToken400Response.java
 ru/planet/auth/model/Login400Response.java
+ru/planet/auth/model/ValidateRequest.java
+ru/planet/auth/model/ValidateResponse.java

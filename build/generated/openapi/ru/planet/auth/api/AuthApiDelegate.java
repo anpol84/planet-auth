@@ -8,13 +8,21 @@ package ru.planet.auth.api;
 import ru.planet.auth.model.AuthErrorResponse;
 import ru.planet.auth.model.AuthRequest;
 import ru.planet.auth.model.AuthResponse;
+import ru.planet.auth.model.CheckToken400Response;
 import ru.planet.auth.model.Login400Response;
+import ru.planet.auth.model.ValidateRequest;
+import ru.planet.auth.model.ValidateResponse;
 
 import java.util.List;
 import java.util.Map;
 
 @ru.tinkoff.kora.common.annotation.Generated("openapi generator kora client")
 public interface AuthApiDelegate {
+    AuthApiResponses.CheckTokenApiResponse checkToken(
+      
+      ValidateRequest validateRequest
+    ) throws Exception ;
+
     AuthApiResponses.LoginApiResponse login(
       
       AuthRequest authRequest

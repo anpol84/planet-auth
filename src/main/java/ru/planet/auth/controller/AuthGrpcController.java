@@ -23,7 +23,10 @@ public class AuthGrpcController extends AuthServiceImplBase {
     @Override
     @Log
     public void checkToken(CheckTokenRequest request, StreamObserver<CheckTokenResponse> responseObserver) {
-        executeSingle(responseObserver, () -> checkTokenOperation.activate(request.getToken()));
+        executeSingle(responseObserver,
+                () -> CheckTokenResponse.newBuilder()
+                        .setIsValid(checkTokenOperation.activate(request.getToken()))
+                        .build());
     }
 
     @Override

@@ -4,6 +4,7 @@ import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 import ru.planet.auth.exception.BusinessException;
+import ru.planet.auth.exception.ValidationException;
 
 import java.util.function.Supplier;
 
@@ -14,9 +15,10 @@ public class GrpcExecutionHelper {
             observer.onCompleted();
         } catch (BusinessException e) {
             observer.onError(new StatusRuntimeException(Status.NOT_FOUND.withDescription(e.getMessage())));
+        } catch (ValidationException e) {
+            observer.onError(new StatusRuntimeException(Status.INVALID_ARGUMENT.withDescription(e.getMessage())));
         } catch (Throwable var3) {
-            Throwable throwable = var3;
-            observer.onError(throwable);
+            observer.onError(var3);
         }
     }
 }
