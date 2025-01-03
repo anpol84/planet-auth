@@ -35,6 +35,7 @@ configurations {
 
 dependencies {
     koraBom platform("ru.tinkoff.kora:kora-parent:1.1.17")
+    implementation "org.mapstruct:mapstruct:1.5.5.Final"
     annotationProcessor "org.mapstruct:mapstruct-processor:1.5.5.Final"
     annotationProcessor "ru.tinkoff.kora:annotation-processors"
 
@@ -49,6 +50,7 @@ dependencies {
     implementation "ru.tinkoff.kora:json-module"
     implementation "ru.tinkoff.kora:validation-module"
     implementation "ru.tinkoff.kora:micrometer-module"
+
 
     implementation "ru.tinkoff.kora:database-jdbc"
     implementation 'org.mindrot:jbcrypt:0.4'
@@ -66,9 +68,9 @@ dependencies {
 }
 
 protobuf {
-    protoc { artifact = "com.google.protobuf:protoc:3.24.4" }
+    protoc { artifact = "com.google.protobuf:protoc:3.25.3" }
     plugins {
-        grpc { artifact = "io.grpc:protoc-gen-grpc-java:1.58.0" }
+        grpc { artifact = "io.grpc:protoc-gen-grpc-java:1.62.2" }
     }
 
     generateProtoTasks {

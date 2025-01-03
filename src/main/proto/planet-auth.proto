@@ -5,6 +5,7 @@ package ru.tinkoff.kora.generated.grpc;
 service AuthService {
   rpc checkToken(CheckTokenRequest) returns (CheckTokenResponse) {}
   rpc login(LoginRequest) returns (LoginResponse) {}
+  rpc CheckTokenWithId(CheckTokenWithIdRequest) returns (CheckTokenWithIdResponse) {}
 }
 
 message CheckTokenRequest {
@@ -22,4 +23,13 @@ message LoginRequest {
 
 message LoginResponse {
   string token = 1;
+}
+
+message CheckTokenWithIdRequest {
+  string token = 1;
+  uint64 id = 2;
+}
+
+message CheckTokenWithIdResponse {
+  bool isValid = 1;
 }

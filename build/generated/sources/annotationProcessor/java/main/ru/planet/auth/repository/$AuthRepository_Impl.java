@@ -24,8 +24,8 @@ public class $AuthRepository_Impl implements AuthRepository, JdbcRepository {
       );
 
   private static final QueryContext QUERY_CONTEXT_2 = new QueryContext(
-        "SELECT r.id FROM user_roles ur JOIN roles r on ur.role_id = r.id WHERE ur.user_id = :id",
-        "SELECT r.id FROM user_roles ur JOIN roles r on ur.role_id = r.id WHERE ur.user_id = ?",
+        "SELECT r.name FROM user_roles ur JOIN roles r on ur.role_id = r.id WHERE ur.user_id = :id",
+        "SELECT r.name FROM user_roles ur JOIN roles r on ur.role_id = r.id WHERE ur.user_id = ?",
         "AuthRepository.findRoles"
       );
 

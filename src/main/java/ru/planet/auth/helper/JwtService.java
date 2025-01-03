@@ -38,19 +38,36 @@ public class JwtService {
     }
 
     public boolean isValidJwt(String token) {
-        Claims claims = null;
+        Claims claims = getClaims(token);
+        if (claims == null) {
+            return false;
+        }
+        User user = authRepository.findByLogin(String.valueOf(claims.get(ClaimField.USERNAME)));
+        return user != null && claims.getExpiration().after(new Date());
+    }
+
+    public boolean isValidJwtWithId(String token, Long id) {
+        Claims claims = getClaims(token);
+        if (claims == null) {
+            return false;
+        }
+        User user = authRepository.findByLogin(String.valueOf(claims.get(ClaimField.USERNAME)));
+        return user != null &&
+                claims.getExpiration().after(new Date()) &&
+                (String.valueOf(claims.get(ClaimField.ROLE)).contains("ROLE_ADMIN") ||
+                Long.valueOf(String.valueOf(claims.get(ClaimField.USER_ID))).equals(id));
+    }
+
+    private Claims getClaims(String token) {
         try {
-             claims = Jwts.parser()
+            return Jwts.parser()
                     .verifyWith(generateSecretKey())
                     .build()
                     .parseSignedClaims(token)
                     .getPayload();
         } catch (Exception e) {
-            return false;
+            return null;
         }
-
-        User user = authRepository.findByLogin(String.valueOf(claims.get(ClaimField.USERNAME)));
-        return user != null && claims.getExpiration().after(new Date());
     }
 
     private SecretKey generateSecretKey() {

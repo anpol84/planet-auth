@@ -5,7 +5,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.58.0)",
+    value = "by gRPC proto compiler (version 1.62.2)",
     comments = "Source: planet-auth.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AuthServiceGrpc {
@@ -77,6 +77,37 @@ public final class AuthServiceGrpc {
     return getLoginMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdRequest,
+      ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdResponse> getCheckTokenWithIdMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CheckTokenWithId",
+      requestType = ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdRequest.class,
+      responseType = ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdRequest,
+      ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdResponse> getCheckTokenWithIdMethod() {
+    io.grpc.MethodDescriptor<ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdRequest, ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdResponse> getCheckTokenWithIdMethod;
+    if ((getCheckTokenWithIdMethod = AuthServiceGrpc.getCheckTokenWithIdMethod) == null) {
+      synchronized (AuthServiceGrpc.class) {
+        if ((getCheckTokenWithIdMethod = AuthServiceGrpc.getCheckTokenWithIdMethod) == null) {
+          AuthServiceGrpc.getCheckTokenWithIdMethod = getCheckTokenWithIdMethod =
+              io.grpc.MethodDescriptor.<ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdRequest, ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CheckTokenWithId"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("CheckTokenWithId"))
+              .build();
+        }
+      }
+    }
+    return getCheckTokenWithIdMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -138,6 +169,13 @@ public final class AuthServiceGrpc {
         io.grpc.stub.StreamObserver<ru.tinkoff.kora.generated.grpc.PlanetAuth.LoginResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLoginMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void checkTokenWithId(ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdRequest request,
+        io.grpc.stub.StreamObserver<ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCheckTokenWithIdMethod(), responseObserver);
+    }
   }
 
   /**
@@ -182,6 +220,14 @@ public final class AuthServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getLoginMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void checkTokenWithId(ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdRequest request,
+        io.grpc.stub.StreamObserver<ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCheckTokenWithIdMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -212,6 +258,13 @@ public final class AuthServiceGrpc {
     public ru.tinkoff.kora.generated.grpc.PlanetAuth.LoginResponse login(ru.tinkoff.kora.generated.grpc.PlanetAuth.LoginRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getLoginMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdResponse checkTokenWithId(ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCheckTokenWithIdMethod(), getCallOptions(), request);
     }
   }
 
@@ -246,10 +299,19 @@ public final class AuthServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getLoginMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdResponse> checkTokenWithId(
+        ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCheckTokenWithIdMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CHECK_TOKEN = 0;
   private static final int METHODID_LOGIN = 1;
+  private static final int METHODID_CHECK_TOKEN_WITH_ID = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -275,6 +337,10 @@ public final class AuthServiceGrpc {
         case METHODID_LOGIN:
           serviceImpl.login((ru.tinkoff.kora.generated.grpc.PlanetAuth.LoginRequest) request,
               (io.grpc.stub.StreamObserver<ru.tinkoff.kora.generated.grpc.PlanetAuth.LoginResponse>) responseObserver);
+          break;
+        case METHODID_CHECK_TOKEN_WITH_ID:
+          serviceImpl.checkTokenWithId((ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdRequest) request,
+              (io.grpc.stub.StreamObserver<ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -308,6 +374,13 @@ public final class AuthServiceGrpc {
               ru.tinkoff.kora.generated.grpc.PlanetAuth.LoginRequest,
               ru.tinkoff.kora.generated.grpc.PlanetAuth.LoginResponse>(
                 service, METHODID_LOGIN)))
+        .addMethod(
+          getCheckTokenWithIdMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdRequest,
+              ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdResponse>(
+                service, METHODID_CHECK_TOKEN_WITH_ID)))
         .build();
   }
 
@@ -358,6 +431,7 @@ public final class AuthServiceGrpc {
               .setSchemaDescriptor(new AuthServiceFileDescriptorSupplier())
               .addMethod(getCheckTokenMethod())
               .addMethod(getLoginMethod())
+              .addMethod(getCheckTokenWithIdMethod())
               .build();
         }
       }

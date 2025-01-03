@@ -18,6 +18,6 @@ public interface AuthRepository extends JdbcRepository {
     User findByLogin(String login);
 
     @Log
-    @Query("SELECT r.id FROM user_roles ur JOIN roles r on ur.role_id = r.id WHERE ur.user_id = :id")
+    @Query("SELECT r.name FROM user_roles ur JOIN roles r on ur.role_id = r.id WHERE ur.user_id = :id")
     List<String> findRoles(Long id);
 }
