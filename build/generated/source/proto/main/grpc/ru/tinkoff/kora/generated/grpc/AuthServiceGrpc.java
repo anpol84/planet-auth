@@ -108,6 +108,37 @@ public final class AuthServiceGrpc {
     return getCheckTokenWithIdMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest,
+      ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse> getCheckAdminMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CheckAdmin",
+      requestType = ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest.class,
+      responseType = ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest,
+      ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse> getCheckAdminMethod() {
+    io.grpc.MethodDescriptor<ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest, ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse> getCheckAdminMethod;
+    if ((getCheckAdminMethod = AuthServiceGrpc.getCheckAdminMethod) == null) {
+      synchronized (AuthServiceGrpc.class) {
+        if ((getCheckAdminMethod = AuthServiceGrpc.getCheckAdminMethod) == null) {
+          AuthServiceGrpc.getCheckAdminMethod = getCheckAdminMethod =
+              io.grpc.MethodDescriptor.<ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest, ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CheckAdmin"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("CheckAdmin"))
+              .build();
+        }
+      }
+    }
+    return getCheckAdminMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -176,6 +207,13 @@ public final class AuthServiceGrpc {
         io.grpc.stub.StreamObserver<ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCheckTokenWithIdMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void checkAdmin(ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest request,
+        io.grpc.stub.StreamObserver<ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCheckAdminMethod(), responseObserver);
+    }
   }
 
   /**
@@ -228,6 +266,14 @@ public final class AuthServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCheckTokenWithIdMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void checkAdmin(ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest request,
+        io.grpc.stub.StreamObserver<ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCheckAdminMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -265,6 +311,13 @@ public final class AuthServiceGrpc {
     public ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdResponse checkTokenWithId(ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCheckTokenWithIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse checkAdmin(ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCheckAdminMethod(), getCallOptions(), request);
     }
   }
 
@@ -307,11 +360,20 @@ public final class AuthServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCheckTokenWithIdMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse> checkAdmin(
+        ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCheckAdminMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CHECK_TOKEN = 0;
   private static final int METHODID_LOGIN = 1;
   private static final int METHODID_CHECK_TOKEN_WITH_ID = 2;
+  private static final int METHODID_CHECK_ADMIN = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -341,6 +403,10 @@ public final class AuthServiceGrpc {
         case METHODID_CHECK_TOKEN_WITH_ID:
           serviceImpl.checkTokenWithId((ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdRequest) request,
               (io.grpc.stub.StreamObserver<ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdResponse>) responseObserver);
+          break;
+        case METHODID_CHECK_ADMIN:
+          serviceImpl.checkAdmin((ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest) request,
+              (io.grpc.stub.StreamObserver<ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -381,6 +447,13 @@ public final class AuthServiceGrpc {
               ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdRequest,
               ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdResponse>(
                 service, METHODID_CHECK_TOKEN_WITH_ID)))
+        .addMethod(
+          getCheckAdminMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest,
+              ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse>(
+                service, METHODID_CHECK_ADMIN)))
         .build();
   }
 
@@ -432,6 +505,7 @@ public final class AuthServiceGrpc {
               .addMethod(getCheckTokenMethod())
               .addMethod(getLoginMethod())
               .addMethod(getCheckTokenWithIdMethod())
+              .addMethod(getCheckAdminMethod())
               .build();
         }
       }

@@ -51,11 +51,21 @@ public class JwtService {
         if (claims == null) {
             return false;
         }
+        return isValidAdmin(token) ||
+                Long.valueOf(String.valueOf(claims.get(ClaimField.USER_ID))).equals(id);
+    }
+
+    public boolean isValidAdmin(String token) {
+        Claims claims = getClaims(token);
+        System.out.println(token);
+        if (claims == null) {
+            return false;
+        }
+        System.out.println(String.valueOf(claims.get(ClaimField.ROLE)));
         User user = authRepository.findByLogin(String.valueOf(claims.get(ClaimField.USERNAME)));
         return user != null &&
                 claims.getExpiration().after(new Date()) &&
-                (String.valueOf(claims.get(ClaimField.ROLE)).contains("ROLE_ADMIN") ||
-                Long.valueOf(String.valueOf(claims.get(ClaimField.USER_ID))).equals(id));
+                (String.valueOf(claims.get(ClaimField.ROLE)).contains("ROLE_ADMIN"));
     }
 
     private Claims getClaims(String token) {

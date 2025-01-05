@@ -6,6 +6,7 @@ service AuthService {
   rpc checkToken(CheckTokenRequest) returns (CheckTokenResponse) {}
   rpc login(LoginRequest) returns (LoginResponse) {}
   rpc CheckTokenWithId(CheckTokenWithIdRequest) returns (CheckTokenWithIdResponse) {}
+  rpc CheckAdmin(CheckAdminRequest) returns (CheckAdminResponse) {}
 }
 
 message CheckTokenRequest {
@@ -25,11 +26,19 @@ message LoginResponse {
   string token = 1;
 }
 
+message CheckAdminRequest {
+  string token = 1;
+}
+
 message CheckTokenWithIdRequest {
   string token = 1;
   uint64 id = 2;
 }
 
 message CheckTokenWithIdResponse {
+  bool isValid = 1;
+}
+
+message CheckAdminResponse {
   bool isValid = 1;
 }

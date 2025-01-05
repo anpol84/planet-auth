@@ -2296,6 +2296,558 @@ public final class PlanetAuth {
 
   }
 
+  public interface CheckAdminRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:ru.tinkoff.kora.generated.grpc.CheckAdminRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string token = 1;</code>
+     * @return The token.
+     */
+    java.lang.String getToken();
+    /**
+     * <code>string token = 1;</code>
+     * @return The bytes for token.
+     */
+    com.google.protobuf.ByteString
+        getTokenBytes();
+  }
+  /**
+   * Protobuf type {@code ru.tinkoff.kora.generated.grpc.CheckAdminRequest}
+   */
+  public static final class CheckAdminRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:ru.tinkoff.kora.generated.grpc.CheckAdminRequest)
+      CheckAdminRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CheckAdminRequest.newBuilder() to construct.
+    private CheckAdminRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CheckAdminRequest() {
+      token_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CheckAdminRequest();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return ru.tinkoff.kora.generated.grpc.PlanetAuth.internal_static_ru_tinkoff_kora_generated_grpc_CheckAdminRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return ru.tinkoff.kora.generated.grpc.PlanetAuth.internal_static_ru_tinkoff_kora_generated_grpc_CheckAdminRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest.class, ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest.Builder.class);
+    }
+
+    public static final int TOKEN_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object token_ = "";
+    /**
+     * <code>string token = 1;</code>
+     * @return The token.
+     */
+    @java.lang.Override
+    public java.lang.String getToken() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        token_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string token = 1;</code>
+     * @return The bytes for token.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTokenBytes() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        token_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(token_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(token_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest)) {
+        return super.equals(obj);
+      }
+      ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest other = (ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest) obj;
+
+      if (!getToken()
+          .equals(other.getToken())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getToken().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code ru.tinkoff.kora.generated.grpc.CheckAdminRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:ru.tinkoff.kora.generated.grpc.CheckAdminRequest)
+        ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return ru.tinkoff.kora.generated.grpc.PlanetAuth.internal_static_ru_tinkoff_kora_generated_grpc_CheckAdminRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return ru.tinkoff.kora.generated.grpc.PlanetAuth.internal_static_ru_tinkoff_kora_generated_grpc_CheckAdminRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest.class, ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest.Builder.class);
+      }
+
+      // Construct using ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        token_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return ru.tinkoff.kora.generated.grpc.PlanetAuth.internal_static_ru_tinkoff_kora_generated_grpc_CheckAdminRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest getDefaultInstanceForType() {
+        return ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest build() {
+        ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest buildPartial() {
+        ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest result = new ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.token_ = token_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest) {
+          return mergeFrom((ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest other) {
+        if (other == ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest.getDefaultInstance()) return this;
+        if (!other.getToken().isEmpty()) {
+          token_ = other.token_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                token_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object token_ = "";
+      /**
+       * <code>string token = 1;</code>
+       * @return The token.
+       */
+      public java.lang.String getToken() {
+        java.lang.Object ref = token_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          token_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string token = 1;</code>
+       * @return The bytes for token.
+       */
+      public com.google.protobuf.ByteString
+          getTokenBytes() {
+        java.lang.Object ref = token_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          token_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string token = 1;</code>
+       * @param value The token to set.
+       * @return This builder for chaining.
+       */
+      public Builder setToken(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        token_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string token = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearToken() {
+        token_ = getDefaultInstance().getToken();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string token = 1;</code>
+       * @param value The bytes for token to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        token_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:ru.tinkoff.kora.generated.grpc.CheckAdminRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:ru.tinkoff.kora.generated.grpc.CheckAdminRequest)
+    private static final ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest();
+    }
+
+    public static ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CheckAdminRequest>
+        PARSER = new com.google.protobuf.AbstractParser<CheckAdminRequest>() {
+      @java.lang.Override
+      public CheckAdminRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<CheckAdminRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CheckAdminRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface CheckTokenWithIdRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:ru.tinkoff.kora.generated.grpc.CheckTokenWithIdRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -3398,6 +3950,483 @@ public final class PlanetAuth {
 
   }
 
+  public interface CheckAdminResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:ru.tinkoff.kora.generated.grpc.CheckAdminResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bool isValid = 1;</code>
+     * @return The isValid.
+     */
+    boolean getIsValid();
+  }
+  /**
+   * Protobuf type {@code ru.tinkoff.kora.generated.grpc.CheckAdminResponse}
+   */
+  public static final class CheckAdminResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:ru.tinkoff.kora.generated.grpc.CheckAdminResponse)
+      CheckAdminResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CheckAdminResponse.newBuilder() to construct.
+    private CheckAdminResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CheckAdminResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CheckAdminResponse();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return ru.tinkoff.kora.generated.grpc.PlanetAuth.internal_static_ru_tinkoff_kora_generated_grpc_CheckAdminResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return ru.tinkoff.kora.generated.grpc.PlanetAuth.internal_static_ru_tinkoff_kora_generated_grpc_CheckAdminResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse.class, ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse.Builder.class);
+    }
+
+    public static final int ISVALID_FIELD_NUMBER = 1;
+    private boolean isValid_ = false;
+    /**
+     * <code>bool isValid = 1;</code>
+     * @return The isValid.
+     */
+    @java.lang.Override
+    public boolean getIsValid() {
+      return isValid_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (isValid_ != false) {
+        output.writeBool(1, isValid_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (isValid_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, isValid_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse)) {
+        return super.equals(obj);
+      }
+      ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse other = (ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse) obj;
+
+      if (getIsValid()
+          != other.getIsValid()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ISVALID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsValid());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code ru.tinkoff.kora.generated.grpc.CheckAdminResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:ru.tinkoff.kora.generated.grpc.CheckAdminResponse)
+        ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return ru.tinkoff.kora.generated.grpc.PlanetAuth.internal_static_ru_tinkoff_kora_generated_grpc_CheckAdminResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return ru.tinkoff.kora.generated.grpc.PlanetAuth.internal_static_ru_tinkoff_kora_generated_grpc_CheckAdminResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse.class, ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse.Builder.class);
+      }
+
+      // Construct using ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        isValid_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return ru.tinkoff.kora.generated.grpc.PlanetAuth.internal_static_ru_tinkoff_kora_generated_grpc_CheckAdminResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse getDefaultInstanceForType() {
+        return ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse build() {
+        ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse buildPartial() {
+        ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse result = new ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isValid_ = isValid_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse) {
+          return mergeFrom((ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse other) {
+        if (other == ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse.getDefaultInstance()) return this;
+        if (other.getIsValid() != false) {
+          setIsValid(other.getIsValid());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                isValid_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private boolean isValid_ ;
+      /**
+       * <code>bool isValid = 1;</code>
+       * @return The isValid.
+       */
+      @java.lang.Override
+      public boolean getIsValid() {
+        return isValid_;
+      }
+      /**
+       * <code>bool isValid = 1;</code>
+       * @param value The isValid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsValid(boolean value) {
+
+        isValid_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool isValid = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsValid() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        isValid_ = false;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:ru.tinkoff.kora.generated.grpc.CheckAdminResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:ru.tinkoff.kora.generated.grpc.CheckAdminResponse)
+    private static final ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse();
+    }
+
+    public static ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CheckAdminResponse>
+        PARSER = new com.google.protobuf.AbstractParser<CheckAdminResponse>() {
+      @java.lang.Override
+      public CheckAdminResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<CheckAdminResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CheckAdminResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckAdminResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_ru_tinkoff_kora_generated_grpc_CheckTokenRequest_descriptor;
   private static final 
@@ -3419,6 +4448,11 @@ public final class PlanetAuth {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ru_tinkoff_kora_generated_grpc_LoginResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ru_tinkoff_kora_generated_grpc_CheckAdminRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ru_tinkoff_kora_generated_grpc_CheckAdminRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_ru_tinkoff_kora_generated_grpc_CheckTokenWithIdRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -3428,6 +4462,11 @@ public final class PlanetAuth {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ru_tinkoff_kora_generated_grpc_CheckTokenWithIdResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ru_tinkoff_kora_generated_grpc_CheckAdminResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ru_tinkoff_kora_generated_grpc_CheckAdminResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3442,19 +4481,24 @@ public final class PlanetAuth {
       "n\030\001 \001(\t\"%\n\022CheckTokenResponse\022\017\n\007isValid" +
       "\030\001 \001(\010\"/\n\014LoginRequest\022\r\n\005login\030\001 \001(\t\022\020\n" +
       "\010password\030\002 \001(\t\"\036\n\rLoginResponse\022\r\n\005toke" +
-      "n\030\001 \001(\t\"4\n\027CheckTokenWithIdRequest\022\r\n\005to" +
-      "ken\030\001 \001(\t\022\n\n\002id\030\002 \001(\004\"+\n\030CheckTokenWithI" +
-      "dResponse\022\017\n\007isValid\030\001 \001(\0102\366\002\n\013AuthServi" +
-      "ce\022u\n\ncheckToken\0221.ru.tinkoff.kora.gener" +
-      "ated.grpc.CheckTokenRequest\0322.ru.tinkoff" +
-      ".kora.generated.grpc.CheckTokenResponse\"" +
-      "\000\022f\n\005login\022,.ru.tinkoff.kora.generated.g" +
-      "rpc.LoginRequest\032-.ru.tinkoff.kora.gener" +
-      "ated.grpc.LoginResponse\"\000\022\207\001\n\020CheckToken" +
-      "WithId\0227.ru.tinkoff.kora.generated.grpc." +
-      "CheckTokenWithIdRequest\0328.ru.tinkoff.kor" +
-      "a.generated.grpc.CheckTokenWithIdRespons" +
-      "e\"\000b\006proto3"
+      "n\030\001 \001(\t\"\"\n\021CheckAdminRequest\022\r\n\005token\030\001 " +
+      "\001(\t\"4\n\027CheckTokenWithIdRequest\022\r\n\005token\030" +
+      "\001 \001(\t\022\n\n\002id\030\002 \001(\004\"+\n\030CheckTokenWithIdRes" +
+      "ponse\022\017\n\007isValid\030\001 \001(\010\"%\n\022CheckAdminResp" +
+      "onse\022\017\n\007isValid\030\001 \001(\0102\355\003\n\013AuthService\022u\n" +
+      "\ncheckToken\0221.ru.tinkoff.kora.generated." +
+      "grpc.CheckTokenRequest\0322.ru.tinkoff.kora" +
+      ".generated.grpc.CheckTokenResponse\"\000\022f\n\005" +
+      "login\022,.ru.tinkoff.kora.generated.grpc.L" +
+      "oginRequest\032-.ru.tinkoff.kora.generated." +
+      "grpc.LoginResponse\"\000\022\207\001\n\020CheckTokenWithI" +
+      "d\0227.ru.tinkoff.kora.generated.grpc.Check" +
+      "TokenWithIdRequest\0328.ru.tinkoff.kora.gen" +
+      "erated.grpc.CheckTokenWithIdResponse\"\000\022u" +
+      "\n\nCheckAdmin\0221.ru.tinkoff.kora.generated" +
+      ".grpc.CheckAdminRequest\0322.ru.tinkoff.kor" +
+      "a.generated.grpc.CheckAdminResponse\"\000b\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3484,17 +4528,29 @@ public final class PlanetAuth {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ru_tinkoff_kora_generated_grpc_LoginResponse_descriptor,
         new java.lang.String[] { "Token", });
-    internal_static_ru_tinkoff_kora_generated_grpc_CheckTokenWithIdRequest_descriptor =
+    internal_static_ru_tinkoff_kora_generated_grpc_CheckAdminRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
+    internal_static_ru_tinkoff_kora_generated_grpc_CheckAdminRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ru_tinkoff_kora_generated_grpc_CheckAdminRequest_descriptor,
+        new java.lang.String[] { "Token", });
+    internal_static_ru_tinkoff_kora_generated_grpc_CheckTokenWithIdRequest_descriptor =
+      getDescriptor().getMessageTypes().get(5);
     internal_static_ru_tinkoff_kora_generated_grpc_CheckTokenWithIdRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ru_tinkoff_kora_generated_grpc_CheckTokenWithIdRequest_descriptor,
         new java.lang.String[] { "Token", "Id", });
     internal_static_ru_tinkoff_kora_generated_grpc_CheckTokenWithIdResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_ru_tinkoff_kora_generated_grpc_CheckTokenWithIdResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ru_tinkoff_kora_generated_grpc_CheckTokenWithIdResponse_descriptor,
+        new java.lang.String[] { "IsValid", });
+    internal_static_ru_tinkoff_kora_generated_grpc_CheckAdminResponse_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_ru_tinkoff_kora_generated_grpc_CheckAdminResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ru_tinkoff_kora_generated_grpc_CheckAdminResponse_descriptor,
         new java.lang.String[] { "IsValid", });
   }
 
