@@ -11,7 +11,6 @@ public class CheckTokenWithIdOperation {
     private final JwtService jwtService;
 
     public CheckTokenWithIdResponse activate(String token, long id) {
-        System.out.println(jwtService.isValidJwtWithId(token, id));
         return CheckTokenWithIdResponse.newBuilder()
                 .setIsValid(jwtService.isValidJwtWithId(token, id))
                 .build();

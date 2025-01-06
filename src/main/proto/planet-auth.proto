@@ -7,6 +7,7 @@ service AuthService {
   rpc login(LoginRequest) returns (LoginResponse) {}
   rpc CheckTokenWithId(CheckTokenWithIdRequest) returns (CheckTokenWithIdResponse) {}
   rpc CheckAdmin(CheckAdminRequest) returns (CheckAdminResponse) {}
+  rpc InvalidateUserCache(InvalidateUserCacheRequest) returns (InvalidateUserCacheResponse) {}
 }
 
 message CheckTokenRequest {
@@ -41,4 +42,12 @@ message CheckTokenWithIdResponse {
 
 message CheckAdminResponse {
   bool isValid = 1;
+}
+
+message InvalidateUserCacheRequest {
+  string login = 1;
+}
+
+message InvalidateUserCacheResponse {
+
 }

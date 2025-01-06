@@ -57,11 +57,9 @@ public class JwtService {
 
     public boolean isValidAdmin(String token) {
         Claims claims = getClaims(token);
-        System.out.println(token);
         if (claims == null) {
             return false;
         }
-        System.out.println(String.valueOf(claims.get(ClaimField.ROLE)));
         User user = authRepository.findByLogin(String.valueOf(claims.get(ClaimField.USERNAME)));
         return user != null &&
                 claims.getExpiration().after(new Date()) &&

@@ -2,11 +2,8 @@ package ru.planet.auth.controller;
 
 import io.grpc.stub.StreamObserver;
 import lombok.RequiredArgsConstructor;
-import ru.planet.auth.operation.CheckAdminOperation;
-import ru.planet.auth.operation.CheckTokenWithIdOperation;
+import ru.planet.auth.operation.*;
 import ru.tinkoff.kora.common.Component;
-import ru.planet.auth.operation.CheckTokenOperation;
-import ru.planet.auth.operation.LoginOperation;
 import ru.tinkoff.kora.generated.grpc.AuthServiceGrpc.AuthServiceImplBase;
 import ru.tinkoff.kora.generated.grpc.PlanetAuth;
 import ru.tinkoff.kora.generated.grpc.PlanetAuth.CheckTokenWithIdRequest;
@@ -26,6 +23,7 @@ public class AuthGrpcController extends AuthServiceImplBase {
     private final CheckTokenOperation checkTokenOperation;
     private final CheckTokenWithIdOperation checkTokenWithIdOperation;
     private final CheckAdminOperation checkAdminOperation;
+    private final InvalidateUserCacheOperation invalidateUserCacheOperation;
 
     @Override
     @Log
@@ -55,5 +53,11 @@ public class AuthGrpcController extends AuthServiceImplBase {
     @Log
     public void checkAdmin(PlanetAuth.CheckAdminRequest request, StreamObserver<PlanetAuth.CheckAdminResponse> responseObserver) {
         executeSingle(responseObserver, () -> checkAdminOperation.activate(request));
+    }
+
+    @Override
+    @Log
+    public void invalidateUserCache(PlanetAuth.InvalidateUserCacheRequest request, StreamObserver<PlanetAuth.InvalidateUserCacheResponse> responseObserver) {
+        executeSingle(responseObserver, () -> invalidateUserCacheOperation.activate(request.getLogin()));
     }
 }
